@@ -1,4 +1,5 @@
-# UV
+# EE6222 Assignment 1 README
+## How to use UV to control Python verion w.r.t. projects.
 To install certain version of Python.
 ```Bash
 uv python install [版本号]
