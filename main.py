@@ -1,4 +1,17 @@
-import ipdb
+"""
+@file       main.py
+@brief      PCA-based dimensionality reduction and classification on MNIST dataset.
+@author     You Xuan
+@date       March 2025
+@version    1.0
+@course     EE6222 - Machine Learning for Signal Processing
+@assignment Assignment 1 – Dimensionality Reduction and Classification
+
+This script performs dimensionality reduction using Principal Component Analysis (PCA)
+and evaluates classification accuracy using a k-nearest neighbor (k-NN) classifier.
+The accuracy is measured across multiple reduced dimensions and plotted for analysis.
+"""
+
 from sklearn.datasets import fetch_openml
 from sklearn.decomposition import PCA
 from sklearn.model_selection import train_test_split
