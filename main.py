@@ -4,8 +4,8 @@
 @author     You Xuan
 @date       March 2025
 @version    1.0
-@course     EE6222 - Machine Learning for Signal Processing
-@assignment Assignment 1 – Dimensionality Reduction and Classification
+@course     EE6222 - Machine Vision
+@assignment Assignment 1 – Dimensionality Reduction for Classification
 
 This script performs dimensionality reduction using Principal Component Analysis (PCA)
 and evaluates classification accuracy using a k-nearest neighbor (k-NN) classifier.
