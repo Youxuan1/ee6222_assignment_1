@@ -39,16 +39,18 @@ To analyze the effect of dimensionality on classification performance, I plotted
 The classification accuracies obtained at various PCA-reduced dimensionalities are summarized in Figure 1. As shown, the accuracy increased rapidly as the dimensionality rose from 2 to 40, and then gradually saturated.
 
 <div align="center">
-  <img src="zsh_echo.png" alt="Terminal Output" width="600" /><br>
+  <img src="zsh_echo.png" alt="Terminal Output" width="400" /><br>
   <strong>Figure 1.</strong> Terminal output showing classification accuracy at different PCA dimensions.
 </div>
+
 
 Figure 2 illustrates the classification accuracy as a function of the number of principal components retained after PCA. The curve demonstrates a steep improvement in accuracy at lower dimensions, especially between 2 and 20 dimensions. After 40 dimensions, the accuracy plateaued at around 95.8%, and further increases in dimensionality brought no significant improvement. In fact, a slight decline in accuracy was observed when the number of components exceeded 100, likely due to the inclusion of noise or less informative components.
 
 <div align="center">
-  <img src="Figure_1.png" alt="Accuracy vs Dimensionality" width="500"/><br>
+  <img src="Figure_1.png" alt="Accuracy vs Dimensionality" width="400"/><br>
   <strong>Figure 2.</strong> Classification accuracy versus number of dimensions retained after PCA.
 </div>
+
 
 ## Analysis
 
