@@ -2,33 +2,33 @@
 
 ## Abstract
 
-In this report, I investigated how dimensionality reduction affects the classification performance of high-dimensional data. I applied Principal Component Analysis (PCA) to reduce the dimensionality of a publicly available dataset and evaluated the classification accuracy using a k-nearest neighbor (k-NN) classifier across a range of reduced dimensions. The dataset was preprocessed through normalization and partitioned into separate training and testing sets. All parameters for dimensionality reduction and classification were determined using only the training data, while the testing data was used solely to evaluate performance. A curve illustrating the relationship between classification accuracy and data dimensionality was generated and analyzed. The results showed that moderate dimensionality reduction can improve classification accuracy by removing redundant features and noise, whereas excessive reduction may lead to significant information loss and performance degradation. This study highlights the importance of selecting an appropriate number of dimensions to balance performance and computational efficiency.
+In this report, I investigated how dimensionality reduction affects the classification performance of high-dimensional data. I utilized the PCA method to reduce the dimensions of a public data set. I evaluated the accurate classification rate using a kNN classifier across a range of reduced dimensions. The dataset was preprocessed through normalization and partitioned into separate training and testing sets. Only the training data determined all dimensionality reduction and classification parameters, while the testing data was used solely to evaluate how accurate my prediction method would be. A curve illustrating the relationship between classification accuracy and data dimensionality was generated and analyzed. The results showed that moderate dimensionality reduction can improve classification accuracy by removing redundant features and noise, whereas excessive reduction may lead to significant information loss and performance degradation. This study highlights the importance of selecting an appropriate number of dimensions to balance performance and computational efficiency.
 
 ## Introduction
 
-High-dimensional data is common in modern machine learning applications, such as image recognition, bioinformatics, and signal processing. However, high dimensionality can introduce challenges such as increased computational cost, overfitting, and the curse of dimensionality, which often degrade the performance of classification algorithms. Dimensionality reduction techniques provide an effective way to address these issues by projecting the data into a lower-dimensional space while preserving the most informative features.
+High-dimensional data is common in modern machine learning applications, such as image recognition, bioinformatics, and signal processing. However, high dimensionality can introduce problems, such as increasing computational cost, overfitting, and the curse of dimensionality, which often degrade the performance of classification algorithms. Dimensionality reduction techniques effectively address these issues by casting the points into a space in lower dimensions meanwhile preserving the most informative features.
 
-In this study, I explored how dimensionality reduction influences the classification performance of a high-dimensional dataset. Specifically, I applied Principal Component Analysis (PCA), an unsupervised linear projection method that reduces the number of features by retaining the directions of maximum variance. After reducing the dataset into various dimensions, I evaluated classification performance using a k-nearest neighbor (k-NN) classifier.
+In this study, I explored how dimensionality reduction influences the classification performance of a high-dimensional dataset. Specifically, I used PCA, an unsupervised linear projection method that reduces the number of features by retaining the directions of maximum variance. After reducing the dataset into various dimensions, I evaluated classification performance using a k-nearest neighbor (k-NN) classifier.
 
-The aim of this experiment was to analyze the relationship between classification accuracy and the number of dimensions used, and to determine whether dimensionality reduction can improve performance or not. The dataset was properly normalized and split into training and testing sets to ensure a fair evaluation. The final outcome was visualized as a curve showing how classification accuracy varies with the number of dimensions retained after PCA.
+This experiment analyzed the relationship between classification accuracy and the number of dimensions used and determined whether dimensionality reduction can improve performance. The dataset was appropriately normalized and separated into training and testing sets to ensure a fair evaluation. The final outcome was visualized as a curve showing how classification accuracy varies with the number of dimensions retained after PCA.
 
 ## Methodology
 
 ### Dataset
 
-For this experiment, I used the MNIST dataset, a well-known benchmark in image classification that contains 70,000 grayscale images of handwritten digits (0–9). Each image is 28×28 pixels, resulting in 784-dimensional feature vectors. I selected this dataset because of its high dimensionality and widespread use in evaluating classification and dimensionality reduction algorithms.
+I used the MNIST dataset for this experiment, a well-known image classification benchmark containing about 70 thousand grayscale images of handwritten digits (0–9). Each image comprises 28×28 pixels, resulting in 784-dimensional feature vectors. I selected this dataset because of its high dimensionality and widespread use in evaluating classification and dimensionality reduction algorithms.
 
 ### Preprocessing
 
-Before applying dimensionality reduction and classification, I standardized the data using zero-mean and unit-variance normalization. This preprocessing step was necessary to eliminate bias caused by different feature scales. The dataset was then randomly partitioned into 70% for training and 30% for testing. All parameters used in dimensionality reduction and classification were computed strictly from the training data. The testing data was used only to evaluate the model’s performance.
+Before applying dimensionality reduction and classification, I standardized the data using zero-mean and unit-variance normalization. This preprocessing step was necessary to eliminate bias caused by different feature scales. The dataset was then randomly partitioned into seven-tenths for training and three-tenths for testing. All parameters used in dimensionality reduction and classification were computed strictly from the training set. And the testing set was used only to evaluate the performance of the model.
 
 ### Dimensionality Reduction
 
-I applied Principal Component Analysis (PCA) to reduce the data to various lower-dimensional subspaces. PCA identifies the principal components that capture the maximum variance in the data and projects the original features onto those directions. I experimented with a range of dimensions, including 2, 5, 10, 20, 40, 60, 80, 100, 150, and 200 dimensions, in order to observe how dimensionality affects classification performance.
+I used the PCA method to reduce the data to various lower-dimensional subspaces. The PCA process illustrates the principal components with the maximum variance in data and project original features in those directions. I experimented with a range of dimensions, including 2, 5, 10, 20, 40, 60, 80, 100, 150, and 200, to observe how dimensionality affects classification performance.
 
 ### Classification
 
-For classification, I used the k-nearest neighbor (k-NN) algorithm with k=3k=3, a simple and effective non-parametric method. After dimensionality reduction, I trained the k-NN classifier using the transformed training data, and evaluated it on the correspondingly reduced test data. The classification accuracy at each dimensionality level was recorded.
+I used the kNN algorithm with k=3, a simple and effective non-parametric method for classification. After dimensionality reduction, I trained the k-NN classifier using the transformed training data and evaluated it on the correspondingly reduced test set. The classification accuracy at each dimensionality level was recorded.
 
 ### Evaluation
 
@@ -36,7 +36,7 @@ To analyze the effect of dimensionality on classification performance, I plotted
 
 ## Results
 
-The classification accuracies obtained at various PCA-reduced dimensionalities are summarized in Figure 1. As shown, the accuracy increased rapidly as the dimensionality rose from 2 to 40, and then gradually saturated.
+The classification accuracies obtained at various PCA-reduced dimensionalities are summarized in Figure 1. The accuracy increased rapidly as the dimensionality rose from 2 to 40 and then gradually saturated.
 
 <div align="center">
   <img src="zsh_echo.png" alt="Terminal Output" width="400" /><br>
@@ -44,7 +44,7 @@ The classification accuracies obtained at various PCA-reduced dimensionalities a
 </div>
 
 
-Figure 2 illustrates the classification accuracy as a function of the number of principal components retained after PCA. The curve demonstrates a steep improvement in accuracy at lower dimensions, especially between 2 and 20 dimensions. After 40 dimensions, the accuracy plateaued at around 95.8%, and further increases in dimensionality brought no significant improvement. In fact, a slight decline in accuracy was observed when the number of components exceeded 100, likely due to the inclusion of noise or less informative components.
+Figure 2 illustrates the classification accuracy as a consequence of the quantity of principal components retained after PCA. The curve demonstrates a steep improvement in accuracy at lower dimensions, especially between 2 and 20 dimensions. After 40 dimensions, the accuracy plateaued at around 95.8%, and further increases in dimensionality brought no significant improvement. In fact, a slight decline in accuracy was observed when the number of components exceeded 100, likely due to the inclusion of noise or less informative components.
 
 <div align="center">
   <img src="Figure_1.png" alt="Accuracy vs Dimensionality" width="400"/><br>
@@ -54,23 +54,23 @@ Figure 2 illustrates the classification accuracy as a function of the number of 
 
 ## Analysis
 
-The experimental results clearly show the influence of dimensionality on classification performance. At very low dimensions (e.g., 2 or 5), a large portion of the original information was lost during projection, leading to poor classification accuracy. For example, when the data was reduced to only 2 dimensions, the accuracy dropped significantly to 31.02%, which suggests that essential discriminatory features were not preserved in such a low-dimensional space.
+The experimental results clearly show the influence of dimensionality on classification performance. Much of the original information was lost during projecting to low dimensions (e.g., 2 or 5), leading to poor classification accuracy. For example, when the data was reduced to only two dimensions, the accuracy dropped significantly to 31.02%, which suggests that essential discriminatory features were not preserved in such a low-dimensional space.
 
 As the number of principal components increased, the classification accuracy improved rapidly. This indicates that more relevant information for distinguishing between classes was retained in higher-dimensional subspaces. A notable improvement was observed between 5 and 20 dimensions, where the accuracy rose from 72.29% to 94.84%. This demonstrates the effectiveness of PCA in concentrating class-relevant variance in the top few principal components.
 
 The accuracy peaked at 80 dimensions with a value of 95.85%, and remained relatively stable when increasing the dimensionality further. Interestingly, a slight decline in accuracy was observed beyond 100 dimensions. This can be attributed to the fact that additional components started capturing noise or less informative variance, which did not contribute to class separation and may have introduced small distortions in the feature space.
 
-These results highlight a trade-off between retaining enough information for accurate classification and avoiding unnecessary complexity or noise. In this case, reducing the data to 60–80 dimensions was sufficient to achieve near-optimal performance. This not only improves computational efficiency but also helps prevent overfitting, especially when the classifier is simple and the training set is of limited size.
+These results highlight a trade-off between retaining enough information for accurate classification and avoiding unnecessary complexity or noise. In this case, reducing the data to 60–80 dimensions was sufficient to achieve near-optimal performance. This improves computational efficiency and helps prevent overfitting, especially when it is simple, and the classifier limits the training set.
 
 Overall, the findings demonstrate that careful application of dimensionality reduction can enhance classification performance by eliminating redundancy and preserving only the most informative structure in the data.
 
 ## Conclusion
 
-In this report, I investigated the effect of dimensionality reduction on the classification performance of high-dimensional data using PCA and a k-nearest neighbor classifier. The experiment was conducted on the MNIST dataset, and classification accuracy was evaluated across a range of reduced dimensions.
+In this report, I investigated the effects of dimensionality reduction on the classification capabilities of high-dimensional data using PCA and a k-nearest neighbor classifier. The test was conducted on the MNIST dataset, and classification accuracy was evaluated across a range of reduced dimensions.
 
 The results demonstrated that reducing dimensionality can significantly improve classification efficiency when done properly. Accuracy improved rapidly with increasing dimensions up to around 60–80 components, where it reached a near-optimal level. Beyond this point, additional dimensions provided little to no benefit and even caused slight degradation in performance, likely due to the inclusion of noise and irrelevant variance.
 
-These findings confirm that dimensionality reduction is a valuable preprocessing step in classification tasks involving high-dimensional data. Selecting an appropriate number of dimensions is crucial to balancing performance and computational cost. In practical applications, PCA can be used not only to speed up training and inference but also to improve generalization by focusing on the most informative features.
+These findings confirm that dimensionality reduction is a valuable preprocessing step in classification tasks involving high-dimensional data. Selecting an appropriate number of dimensions is crucial to balancing performance and computational cost. In practical applications, PCA can be used to speed up training and inference and improve generalization by focusing on the most informative features.
 
 ## References
 
