@@ -33,7 +33,7 @@ if __name__ == "__main__":
     )
 
     # 3. 设置不同降维维度
-    dimensions = [2, 5, 10, 20, 40, 60, 80, 100, 150, 200]
+    dimensions = [2, 5, 10, 20, 40, 60, 80, 100, 150, 200, 250, 300, 350, 400, 450]
     accuracies = []
 
     for dim in dimensions:
